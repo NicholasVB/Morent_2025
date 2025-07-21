@@ -1,0 +1,250 @@
+@import "../../style.scss";
+
+.form {
+
+    &__container {
+        max-width: 830px !important;
+    }
+
+    &__body {
+        background-color: white;
+        margin: 20px auto;
+        padding: 20px 12px 30px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+    }
+
+    &__title-block {}
+
+    &__sign-up {}
+
+    &__buttons {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        column-gap: 32px;
+
+
+        label {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 120%;
+        }
+
+        .field-error {
+            margin-top: -10px;
+            font-size: 13px;
+            font-weight: 400;
+            color: red;
+        }
+
+        input {
+            background: #F6F7F9;
+            border-radius: 10px;
+            padding: 16px 32px;
+            width: 386px;
+
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 200%;
+
+
+            // color: #90A3BF;
+            color: black;
+        }
+
+        input::placeholder {
+            font-size: 14px;
+            font-weight: 500;
+            color: black;
+        }
+
+        .Input {
+            background: #F6F7F9;
+            border-radius: 10px;
+            // padding: 16px 32px;
+            width: 386px;
+
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 200%;
+
+
+            color: #90A3BF;
+        }
+
+        input[type=checkbox] {
+            width: 20px;
+        }
+
+        .checkbox-body {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            align-items: center;
+            flex: 1 1 100%;
+        }
+
+        select {
+            background: #F6F7F9;
+            border-radius: 10px;
+            padding: 16px 32px;
+            width: 386px;
+            min-height: 60px;
+
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 900%;
+
+
+            // color: #90A3BF;
+            color: black;
+        }
+
+        option {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 900%;
+        }
+    }
+}
+
+.title-block {
+
+    &__title {
+        position: relative;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 125%;
+
+        color: #1A202C;
+    }
+
+    span+&__title {
+        padding-left: 30px;
+        padding-bottom: 5px;
+    }
+
+    span+&__title::after {
+        content: "";
+        position: absolute;
+        left: 3px;
+        top: 6px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        // background-color: #5CAFFC;
+        background-color: #3563E9;
+    }
+
+    span+&__title::before {
+        content: "";
+        position: absolute;
+        left: -1px;
+        top: 2px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        opacity: 0.5;
+        background-color: #3563E9;
+    }
+
+
+    &__sub-title {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+
+        color: #90A3BF;
+    }
+}
+
+.sign-up {
+    display: flex;
+    column-gap: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+
+    &__text {
+        color: #90A3BF;
+    }
+
+    &__link {
+        color: #3563E9;
+    }
+}
+
+.confirm-end-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 12px;
+    margin: -25px 0px 0px;
+}
+
+@media(max-width: $tablet) {
+    .form {
+        &__container {
+            max-width: 480px !important;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+
+            label {
+                max-width: 100%;
+            }
+
+            input {
+                width: 100%;
+            }
+
+            .Input {
+                width: 100%;
+            }
+
+            select {
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+@media(max-width: $mobileSmall) {
+    .form {
+        &__container {
+            padding: 0 !important;
+            margin: 20px 0 !important;
+            width: 100%;
+        }
+
+        &__body {
+            // padding: 0 0;
+            max-width: 100%;
+            border-radius: 0px;
+        }
+
+
+    }
+}

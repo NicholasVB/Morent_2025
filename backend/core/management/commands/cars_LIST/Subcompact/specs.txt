@@ -1,0 +1,8 @@
+Автомобиль	Максимальное количество посадочных мест	Тип двигателя	Объем бака (литры)
+
+Honda Fit	5					Gasoline	40
+Ford Fiesta	5					Gasoline	42
+Nissan Micra	5					Gasoline	41
+Toyota Yaris	5					Gasoline	42
+Volkswagen Polo	5					Gasoline	40
+Hyundai Accent	5					Gasoline	43

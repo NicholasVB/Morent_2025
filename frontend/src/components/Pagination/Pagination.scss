@@ -1,0 +1,25 @@
+.pagination {
+
+    &__body {
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+        justify-content: center;
+    }
+
+    &__btn {
+
+
+        &_left {
+            border-radius: 4px;
+            padding: 13px 8px;
+        }
+
+        &_right {
+            border-radius: 4px;
+            padding: 13px 8px;
+        }
+    }
+
+    &__text-body {}
+}

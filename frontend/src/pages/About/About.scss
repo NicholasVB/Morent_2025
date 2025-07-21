@@ -1,0 +1,106 @@
+@import "../../style.scss";
+
+.about {
+
+    &__container {}
+
+    &__text-body {
+        background-color: white;
+        margin: 20px auto;
+        border-radius: 15px;
+        padding: 20px;
+    }
+
+    p+p {
+        margin-top: 1em;
+    }
+}
+
+.text-body {
+
+    &__paragraph {
+        font-size: 20px;
+        line-height: 150%;
+        font-weight: 500;
+        text-indent: 35px;
+        text-align: justify;
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #3563E9;
+        margin-top: 1.5em;
+    }
+
+    &>&__title:first-child {
+        margin-top: 0;
+    }
+
+    &__list {}
+}
+
+.list {
+
+    &__item {
+        font-size: 18px;
+        line-height: 170%;
+        font-weight: 500;
+        text-align: justify;
+        padding: 15px 0px 0px 30px;
+
+        & .spoiler-body {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+@media(min-width: $mobile) {
+    .list {
+        &__item {
+            list-style-type: disclosure-closed;
+            list-style-position: inside;
+        }
+    }
+}
+
+@media(max-width: $mobileSmall) {
+    .about {
+
+        &__container {
+            padding: 0px !important;
+        }
+
+        &__text-body {
+            border-radius: 0px;
+        }
+    }
+
+    .text-body {
+
+
+        &__paragraph {
+            font-size: 16px;
+            line-height: 150%;
+            font-weight: 500;
+            text-indent: 35px;
+            text-align: justify;
+        }
+
+        &__title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #3563E9;
+            margin-top: 1.5em;
+        }
+    }
+
+    .list {
+
+        &__item {
+            font-size: 14px;
+            padding: 15px 0px 0px 30px;
+        }
+    }
+}

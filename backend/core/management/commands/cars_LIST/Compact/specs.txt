@@ -1,0 +1,8 @@
+Автомобиль	Максимальное количество посадочных мест	Тип двигателя		Объем бака (литры)
+
+Volkswagen Golf	5					Gasoline,Diesel	50 (Gasoline) ,55 (Diesel)
+Honda Civic	5					Gasoline,Diesel	47 (Gasoline) ,46 (Diesel)
+Toyota Corolla	5					Gasoline,Hybrid	50 (Gasoline) ,43 (Hybrid)
+Ford Focus	5					Gasoline,Diesel	53 (Gasoline) ,55 (Diesel)
+Chevrolet Cruze	5					Gasoline		48
+Mazda3		5					Gasoline,Diesel	51 (Gasoline) ,51 (Diesel)

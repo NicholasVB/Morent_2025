@@ -1,0 +1,8 @@
+Автомобиль	Максимальное количество посадочных мест	Тип двигателя		Объем бака (литры)
+
+Toyota RAV4	5,7					Gasoline,Hybrid	55 (Gasoline) ,55 (Hybrid)
+Honda CR-V	5					Gasoline,Hybrid	53 (Gasoline) ,49 (Hybrid)
+Ford Explorer	6,7					Gasoline,Hybrid	70 (Gasoline) ,54 (Hybrid)
+Jeep Wrangler	4,5					Gasoline,Diesel	81 (Gasoline) ,77 (Diesel)
+BMW X5		5					Gasoline,Diesel	76 (Gasoline) ,83 (Diesel)
+Audi Q5		5					Gasoline,Hybrid	70 (Gasoline) ,54 (Hybrid)

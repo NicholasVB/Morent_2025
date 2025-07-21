@@ -1,0 +1,156 @@
+@import "../../style.scss";
+
+.login {
+    display: flex;
+
+    &__container {
+        width: 415px;
+    }
+
+    &__body {
+        background-color: white;
+        margin: 20px auto;
+        padding: 20px 12px 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+    }
+
+    &__title-block {}
+
+    &__sign-up {}
+
+    &__buttons {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__btn {
+        min-width: 90px;
+        padding: 10px 7px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        column-gap: 32px;
+
+
+        label {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 120%;
+        }
+
+        input {
+            background: #F6F7F9;
+            border-radius: 10px;
+            padding: 16px 32px;
+            width: 386px;
+
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 200%;
+
+
+            color: #90A3BF;
+        }
+
+        .field-error {
+            margin-top: -10px;
+            font-size: 13px;
+            font-weight: 400;
+            color: red;
+        }
+    }
+}
+
+.title-block {
+
+    &__title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 125%;
+
+        color: #1A202C;
+    }
+
+    &__sub-title {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+
+        color: #90A3BF;
+    }
+}
+
+
+
+
+.sign-up {
+    display: flex;
+    column-gap: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+
+    &__text {
+        color: #90A3BF;
+    }
+
+    &__link {
+        color: #3563E9;
+    }
+}
+
+.btn {
+
+    &_white {}
+}
+
+@media(max-width: $tablet) {
+    .login__body {
+        max-width: 450px;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+
+            label {
+                max-width: 100%;
+            }
+
+            input {
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+@media(max-width: $mobileSmall) {
+    .login {
+        &__container {
+            width: 100%;
+            padding: 0 0 !important;
+            // margin: 0;
+        }
+
+        &__body {
+            // padding: 0 0;
+            max-width: none;
+            margin: 20px 0;
+            border-radius: 0px;
+        }
+    }
+}

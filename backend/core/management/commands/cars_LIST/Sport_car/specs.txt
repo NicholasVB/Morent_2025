@@ -1,0 +1,8 @@
+Автомобиль		Максимальное количество посадочных мест	Тип двигателя	Объем бака (литры)
+
+Porsche 911		2					Gasoline	64
+Chevrolet Corvette	2					Gasoline	70
+Ferrari 488 GTB		2					Gasoline	78
+Lamborghini Huracán	2					Gasoline	70
+McLaren 720S		2					Gasoline	72
+Audi R8			2					Gasoline	83

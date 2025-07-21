@@ -1,0 +1,31 @@
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #3563E9;
+    border-radius: 5px;
+
+    text-align: center;
+    color: white;
+    min-height: 39px;
+    cursor: pointer;
+}
+
+.btn_white {
+    border: 1px solid #3563E9;
+    background: white;
+    color: #3563E9;
+}
+
+.btn_disabled {
+    background: #9ca2ac;
+    color: #fff;
+    font-weight: 400;
+    cursor: default;
+}
+
+.link {
+    padding: 7px 10px;
+    // width: 100%;
+}

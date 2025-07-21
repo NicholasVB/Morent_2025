@@ -1,0 +1,2 @@
+ACCESS_KEY_ID = "asd"
+SECRET_ACCESS_KEY = "asd"

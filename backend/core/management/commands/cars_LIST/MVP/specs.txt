@@ -1,0 +1,8 @@
+Автомобиль		Максимальное количество посадочных мест	Тип двигателя		Объем бака (литры)
+
+Toyota Sienna		7,8					Gasoline,Hybrid	70,75
+Honda Odyssey		7,8					Gasoline,Hybrid	68,73
+Chrysler Pacifica	7,8					Gasoline,Hybrid	71,76
+Kia Carnival/Sedona	7,8					Gasoline,Hybrid	72,82
+Ford Explorer		6,7					Gasoline,Hybrid	68,75
+Subaru Ascent		7,8					Gasoline		73,76

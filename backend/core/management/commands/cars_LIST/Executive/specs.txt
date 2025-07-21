@@ -1,0 +1,8 @@
+Автомобиль		Максимальное количество посадочных мест	Тип двигателя		Объем бака (литры)
+
+Mercedes-Benz S-Class	4,5					Gasoline,Diesel,Hybrid	70,80
+BMW 7 Series		4,5					Gasoline,Diesel,Hybrid	68,78
+Audi A8			4,5					Gasoline,Diesel,Hybrid	72,82
+Lexus LS		4,5					Gasoline,Hybrid	75,84
+Jaguar XJ		4,5					Gasoline,Diesel	77,86
+Cadillac CT6		4,5					Gasoline,Hybrid	73,82

@@ -1,0 +1,18 @@
+.empty-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    &__body {
+        background-color: white;
+        padding: 25px 35px;
+        min-height: 50px;
+        border-radius: 10px;
+    }
+
+    &__text {
+        font-size: 25px;
+        font-weight: 500;
+    }
+}

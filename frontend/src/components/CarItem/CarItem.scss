@@ -1,0 +1,256 @@
+@import "../../style.scss";
+
+.item-body {
+    max-height: 111px;
+    width: 100%;
+    padding: 10px 80px;
+    border-radius: 4px;
+    background: #fff;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    column-gap: 7px;
+
+    &__title {
+        min-width: 110px;
+        font-weight: 500;
+
+    }
+
+    &__carName {
+        width: 100px;
+        font-size: 15px;
+        line-height: 19px;
+        color: #1A202C;
+    }
+
+    &__carClass {
+        font-size: 12px;
+        line-height: 15px;
+        color: #90A3BF;
+    }
+
+    &__img {
+        width: 206px;
+        height: 90px;
+        display: flex;
+        align-self: flex-end;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: contain;
+        }
+    }
+
+    &__specs {
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        justify-content: space-around;
+        column-gap: 11px;
+        min-width: 255px;
+        color: #90A3BF;
+    }
+
+    &__price {
+        min-width: 87px;
+
+        span {
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 19px;
+            color: #1A202C;
+        }
+
+        p {
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 15px;
+            color: #90A3BF;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        // flex: 1 0 auto;
+        justify-content: flex-end;
+        align-items: center;
+        column-gap: 7px;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 19px;
+    }
+}
+
+.text {}
+
+.about-btn {
+    // background-color: #fff;
+    // border: 1px solid #3563E9;
+
+    &__link {
+        padding: 10px 15px;
+        color: #3563E9;
+
+    }
+}
+
+.rent-now-btn {
+
+    &__link {
+        padding: 10px 7px;
+    }
+}
+
+@media(max-width: $pc) {
+    .item-body {
+        max-height: 100%;
+        padding: 23px;
+        width: 315px;
+        height: 350px;
+        border-radius: 10px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &__carName {
+            width: 100%;
+            font-weight: 700;
+            font-size: 21px;
+            line-height: 28px;
+        }
+
+        &__carClass {
+            font-size: 18px;
+            line-height: 20px;
+        }
+
+
+        &__img {
+            width: 100%;
+            height: 110px;
+            margin-top: 20px;
+        }
+
+        &__specs {
+            justify-content: space-between;
+            font-size: 18px;
+            line-height: 20px;
+        }
+
+        &__btns {
+            flex: 0 1 auto;
+        }
+    }
+}
+
+.specs {
+
+    &__block {
+        display: flex;
+        align-items: center;
+        column-gap: 3px;
+    }
+
+    &__img {
+        width: 20px;
+        height: 20px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: contain;
+        }
+    }
+}
+
+@media(max-width: $mobile) {
+    .item-body {
+        width: 100%;
+        height: 100%;
+        @include adaptiveValue("min-height", 330, 280, 767, 479);
+
+        &__center-block {
+            display: flex;
+            flex: 0 1 auto;
+            align-items: center;
+            width: 100%;
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            max-height: 180px;
+            margin: 0;
+        }
+
+        &__specs {
+            display: flex;
+            flex: 1 1 30%;
+            @include adaptiveValue("row-gap", 20, 5, 767, 479);
+            min-width: unset;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 30px;
+            white-space: nowrap;
+        }
+
+        &__footer-block {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__price {
+            span {
+                font-size: 21px;
+                line-height: 19px;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 15px;
+            }
+        }
+
+        &__btns {
+            column-gap: 15px;
+        }
+    }
+}
+
+@media(max-width: $mobileSmall) {
+    .item-body {
+        border-radius: 0px;
+        row-gap: 10px;
+        padding: 15px 10px;
+
+        &__carName {
+            font-size: 16px;
+            line-height: 0%;
+        }
+
+        &__carClass {
+            font-size: 12px;
+            line-height: 250%;
+        }
+
+        &__specs {
+            font-size: 16px;
+        }
+
+        &__price {
+            span {
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+}

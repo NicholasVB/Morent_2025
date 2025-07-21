@@ -1,0 +1,8 @@
+Автомобиль			Максимальное количество посадочных мест	Тип двигателя				Объем бака (литры)
+
+Bugatti Chiron			2					Gasoline				100
+Koenigsegg Jesko		2					Gasoline				82
+Lamborghini Aventador SVJ	2					Gasoline				85
+Ferrari SF90 Stradale		2					Hybrid					68
+McLaren Speedtail		3					Hybrid					72
+Porsche 911 GT2 RS		2					Gasoline				67
