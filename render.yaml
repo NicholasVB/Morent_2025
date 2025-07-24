@@ -9,7 +9,7 @@ services:
     plan: free
     name: morent2025
     runtime: python
-    buildCommand: pip install -r backend/requirements.txt
+    buildCommand: './backend/build.sh'
     startCommand: gunicorn Morent.asgi:application -k uvicorn.workers.UvicornWorker --chdir backend
     envVars:
       - key: DATABASE_URL
