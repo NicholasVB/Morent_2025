@@ -82,16 +82,16 @@ export const Car = () => {
                             <div className="car-body__galery galery">
                                 <div className="galery__img-container">
                                     {/* <img src={`https://morent-backend-xavm.onrender.com/static${fullInfo.main_photo}`} alt=""/> */}
-                                    <img src={`http://127.0.0.1:8000/${fullInfo.main_photo}`} alt=""/>
+                                    <img src={`${fullInfo.main_photo}`} alt=""/>
                                 </div>
                                 
                                 <div className="galery__img-container">
                                     {/* <img src={`https://morent-backend-xavm.onrender.com/static${fullInfo.inside_photo_one}`} alt=""/> */}
-                                    <img src={`http://127.0.0.1:8000/${fullInfo.inside_photo_one}`} alt=""/>
+                                    <img src={`${fullInfo.inside_photo_one}`} alt=""/>
                                 </div>
                                 <div className="galery__img-container">
                                     {/* <img src={`https://morent-backend-xavm.onrender.com/static${fullInfo.inside_photo_two}`} alt=""/> */}
-                                    <img src={`http://127.0.0.1:8000/${fullInfo.inside_photo_two}`} alt=""/>
+                                    <img src={`${fullInfo.inside_photo_two}`} alt=""/>
                                 </div>
                             </div>
                         </div>  
@@ -124,19 +124,19 @@ export const Car = () => {
                                         <SwiperSlide>
                                             <div className="galery__img-container">
                                                 {/* <img src={`https://morent-backend-xavm.onrender.com/static${fullInfo.main_photo}`} alt=""/> */}
-                                                <img src={`http://127.0.0.1:8000/${fullInfo.main_photo}`} alt=""/>
+                                                <img src={`${fullInfo.main_photo}`} alt=""/>
                                             </div>
                                         </SwiperSlide>
                                         <SwiperSlide>
                                             <div className="galery__img-container">
                                                 {/* <img src={`https://morent-backend-xavm.onrender.com/static${fullInfo.inside_photo_one}`} alt=""/> */}
-                                                <img src={`http://127.0.0.1:8000/${fullInfo.inside_photo_one}`} alt=""/>
+                                                <img src={`${fullInfo.inside_photo_one}`} alt=""/>
                                             </div>
                                         </SwiperSlide>
                                         <SwiperSlide>
                                             <div className="galery__img-container">
                                                 {/* <img src={`https://morent-backend-xavm.onrender.com/static${fullInfo.inside_photo_two}`} alt=""/> */}
-                                                <img src={`http://127.0.0.1:8000/${fullInfo.inside_photo_two}`} alt=""/>
+                                                <img src={`${fullInfo.inside_photo_two}`} alt=""/>
                                             </div>
                                         </SwiperSlide>
                                     </Swiper>

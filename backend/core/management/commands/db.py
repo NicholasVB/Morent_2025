@@ -75,7 +75,7 @@ class Command(BaseCommand):
                             photo_prefixs = ["inside_photo_one", "inside_photo_two", 'main_photo']
                             couples = list(zip(photo_prefixs, car_photos_full_path))
                             for photo_prefix, photo_full_path in couples:
-                                with open(os.path.join(self.WORKING_DIRECTORY, photo_full_path), 'rb') as f:
+                                with open(os.path.join(self.WORKING_DIRECTORY, photo_full_path), 'rb', encoding="utf-8") as f:
                                     field = getattr(DB_car_instance, photo_prefix)
                                     field.save(photo_prefix, File(f))
                             connection.commit()

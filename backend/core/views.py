@@ -300,7 +300,7 @@ class CarRetrieveAPIView(RetrieveAPIView):
         else:
             queryset = Car.objects.filter(is_published=True, pk=kwargs.get("pk"))
             # .prefetch_related('cat', 'engine','capacity')
-            serializer_class = CarSerializer(queryset, many=True)
+            serializer_class = CarSerializer(queryset, many=True, context={"request": request})
             cache.set(cache_key, serializer_class.data, timeout=60)
             return Response(serializer_class.data, status=status.HTTP_200_OK)
 
