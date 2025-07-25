@@ -8,7 +8,7 @@ npm run build
 
 echo "➡️  Копируем билд во внутреннюю папку Django (backend/frontend)"
 rm -rf ../backend/frontend/build
-cp -r build ../backend/frontend/
+cp -r build ../backend/frontend/build
 
 echo "📂 Содержимое backend/frontend после копирования:"
 ls -la ../backend/frontend
