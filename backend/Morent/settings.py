@@ -68,9 +68,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Morent.urls'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR , "frontend" , "build" , "static"),
-]
+
 
 TEMPLATES = [
     {
@@ -151,6 +149,9 @@ USE_TZ = True
 # This setting tells Django at which URL static files are going to be served to the user.
 # Here, they well be accessible at your-domain.onrender.com/static/...
 STATIC_URL = '/static/'
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR , "frontend" , "build" , "static"),
+# ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 if not DEBUG:
