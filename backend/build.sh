@@ -7,6 +7,7 @@ npm install
 npm run build
 
 echo "➡️  Копируем билд во внутреннюю папку Django (backend/frontend)"
+mkdir -p ../backend/frontend
 rm -rf ../backend/frontend/build
 cp -r build ../backend/frontend/build
 
