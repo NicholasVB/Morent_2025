@@ -145,7 +145,7 @@ USE_TZ = True
 
 # This setting tells Django at which URL static files are going to be served to the user.
 # Here, they well be accessible at your-domain.onrender.com/static/...
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = "media/"
