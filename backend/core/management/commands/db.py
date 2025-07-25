@@ -6,7 +6,8 @@ from django.utils.text import slugify
 import os
 import shutil
 from random import choice, randint
-import psycopg2
+# from django.db import connection
+# import psycopg2
 import django
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Morent.settings')
@@ -40,8 +41,8 @@ class Command(BaseCommand):
                 "out-1": "main_photo",
             }
             try:
-                connection = self.connection_to_db("mysite")
-                cursor = connection.cursor()
+                # connection = self.connection_to_db("mysite")
+                # cursor = connection.cursor()
                 
                 with open(os.path.join(self.WORKING_DIRECTORY, self.FILE), "r", encoding="utf-8") as file:
                     for line in file:
@@ -78,21 +79,21 @@ class Command(BaseCommand):
                                 with open(os.path.join(self.WORKING_DIRECTORY, photo_full_path), 'rb', encoding="utf-8") as f:
                                     field = getattr(DB_car_instance, photo_prefix)
                                     field.save(photo_prefix, File(f))
-                            connection.commit()
+                            # connection.commit()
             except Exception as error:
                 print(error)
-            finally:
-                cursor.close()
-                connection.close()
+            # finally:
+                # cursor.close()
+                # connection.close()
 
     def add_arguments(self, parser):
         parser.add_argument("--clear", action="store_true")
         parser.add_argument("--fill", action="store_true")
         parser.add_argument("--rm_mediafold", action="store_true")
     
-    def connection_to_db(self, DB_name):
-        connection = psycopg2.connect(host="localhost", database=DB_name, user="postgres", password="mLk690")
-        return connection
+    # def connection_to_db(self, DB_name):
+    #     connection = psycopg2.connect(host="localhost", database=DB_name, user="postgres", password="mLk690")
+    #     return connection
     
     def has_more_than_one_type_of_fuel(self, characteristic):
         return True if "," in characteristic else False
