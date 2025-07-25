@@ -68,10 +68,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Morent.urls'
 
+STATICFILES_DIRS = [
+    BASE_DIR / "frontend" / "build" / "static",
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [BASE_DIR / "frontend" / "build"]
         ,
         'APP_DIRS': True,
         'OPTIONS': {

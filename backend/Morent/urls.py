@@ -19,8 +19,10 @@ from django.urls import path, include, re_path
 from core.views import *
 from Morent import settings
 from django.contrib.auth import views as auth_views
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
+    re_path(r"^(?!api/|admin/).*", TemplateView.as_view(template_name="index.html"))
 ]
