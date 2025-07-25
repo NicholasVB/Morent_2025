@@ -5,6 +5,9 @@ cd frontend
 npm install
 npm run build
 
+rm -rf ../backend/frontend/build
+cp -r build ../backend/frontend/
+
 cd ../backend
 pip install -r requirements-prod.txt
 
