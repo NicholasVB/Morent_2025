@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -o errexit
 
-cd ../frontend
+cd frontend
 npm install
 npm run build
 
