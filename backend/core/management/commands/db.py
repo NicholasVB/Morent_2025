@@ -35,6 +35,7 @@ class Command(BaseCommand):
                 print(f"Error: While deleting folder '{settings.MEDIA_ROOT}': {e}")
 
         if options["fill"]:
+            print("settings.MEDIA_ROOT", settings.MEDIA_ROOT, "\n\n")
             car_photo_name_translator = {
                 "inside-1": "inside_photo_one",
                 "inside-2": "inside_photo_two",
@@ -76,8 +77,9 @@ class Command(BaseCommand):
                             photo_prefixs = ["inside_photo_one", "inside_photo_two", 'main_photo']
                             couples = list(zip(photo_prefixs, car_photos_full_path))
                             for photo_prefix, photo_full_path in couples:
-                                with open(os.path.join(self.WORKING_DIRECTORY, photo_full_path), 'rb', encoding="utf-8") as f:
+                                with open(os.path.join(self.WORKING_DIRECTORY, photo_full_path), 'r', encoding="utf-8") as f:
                                     field = getattr(DB_car_instance, photo_prefix)
+                                    print("Сохраняем фото:", photo_prefix, "из", photo_full_path)
                                     field.save(photo_prefix, File(f))
                             # connection.commit()
             except Exception as error:
