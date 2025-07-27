@@ -14,8 +14,14 @@ from datetime import timedelta
 from pathlib import Path
 import dj_database_url
 from rest_framework.settings import api_settings
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 from core.keys import ACCESS_KEY_ID, SECRET_ACCESS_KEY
+
+
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +45,8 @@ if RENDER_EXTERNAL_HOSTNAME:
 # Application definition
 
 INSTALLED_APPS = [
+    # 'cloudinary',
+    # 'cloudinary_storage',
     'core.apps.CoreConfig',
     'django.contrib.admin',
     'django.contrib.auth',
