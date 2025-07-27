@@ -79,8 +79,9 @@ class Command(BaseCommand):
                             for photo_prefix, photo_full_path in couples:
                                 with open(os.path.join(self.WORKING_DIRECTORY, photo_full_path), 'rb') as f:
                                     field = getattr(DB_car_instance, photo_prefix)
+                                    ext = os.path.splitext(photo_full_path)[1]
                                     print("Сохраняем фото:", photo_prefix, "из", photo_full_path)
-                                    field.save(photo_prefix, File(f))
+                                    field.save(f"{photo_prefix}{ext}", File(f))
                             # connection.commit()
             except Exception as error:
                 print(error)
