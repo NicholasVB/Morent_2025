@@ -32,4 +32,4 @@ python manage.py collectstatic --no-input
 
 # echo "➡️  Наполняем БД"
 # custome command for filling db 
-# python manage.py db --clear --fill
+python manage.py db --clear --fill
