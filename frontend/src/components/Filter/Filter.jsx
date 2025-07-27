@@ -1,5 +1,5 @@
 import React from "react";
-import axios from 'axios';
+import axios from "../../axiosConfigs/axiosConfig";
 import { FiltersGroup } from "../FiltersGroup/FiltersGroup";
 
 import "./Filter.scss"
@@ -14,7 +14,7 @@ export const Filter = () => {
     async function fetchFiltersList () {
         try {
             // let response = await axios.get("https://morent-backend-xavm.onrender.com/api/all_category/")
-            let response = await axios.get("http://127.0.0.1:8000/api/all_category/")
+            let response = await axios.get("/api/all_category/")
             setFiltersList(Object.entries(response.data))
         } catch (error) {
             setFiltersError(error)

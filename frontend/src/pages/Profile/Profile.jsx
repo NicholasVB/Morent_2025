@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Pagination } from "../../components";
 import { setCurentAuthSession } from "../../redux/slices/auth";
 import { setRenderOrderList } from "../../redux/slices/personalFullInfo";
-import axios from "../../axiosConfigs/axiosBaseSettings";
+import axios from "../../axiosConfigs/axiosConfig";
 
 import "./Profile.scss"
 

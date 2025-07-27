@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setListOfCars, fetchAllCars, setListChanged } from '../../redux/slices/carList';
-import axios from 'axios';
+import axios from "../../axiosConfigs/axiosConfig";
 
 import "./FiltersGroup.scss";
 // import {ReactComponent as ReactLogo} from '../../../public/iconsfont/arrow-bottom';
@@ -45,12 +45,12 @@ export const FiltersGroup = ({title, propertyList}) => {
         if (paramsString.length > 0){
             let params = `?${paramsString}`
             // let response = await axios.get(`https://morent-backend-xavm.onrender.com/api/filter/${params}`)
-            let response = await axios.get(`http://127.0.0.1:8000/api/filter/${params}`)
+            let response = await axios.get(`/api/filter/${params}`)
             dispatch(setListOfCars(response.data))
             dispatch(setListChanged(!ListChanged));
         } else {
             // let response = await axios.get(`https://morent-backend-xavm.onrender.com/api/filter/`)
-            let response = await axios.get(`http://127.0.0.1:8000/api/filter/`)
+            let response = await axios.get(`/api/filter/`)
             dispatch(setListOfCars(response.data))
             dispatch(setListChanged(!ListChanged));
         }

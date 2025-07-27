@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+// import axios from "axios";
+import axios from "../../axiosConfigs/axiosConfig";
 
 export const fetchAllCars = createAsyncThunk("carList/fetchAllCars", async () => {
 	// const { data } = await axios.get("https://morent-backend-xavm.onrender.com/api/");
-	const { data } = await axios.get("http://127.0.0.1:8000/api/");
+	const { data } = await axios.get("/api/");
 	// проверять код ошибки try{} catch()
 	console.log("data of one item", data[0])
 	return data;

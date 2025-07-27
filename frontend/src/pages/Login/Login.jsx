@@ -3,7 +3,7 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux"
 import { setCurentAuthSession } from "../../redux/slices/auth";
-import axios from "../../axiosConfigs/axiosAuthSettings";
+import axios from "../../axiosConfigs/axiosConfig";
 
 import "./Login.scss"
 

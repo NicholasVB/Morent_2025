@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "../../axiosConfigs/axiosBaseSettings";
+import axios from "../../axiosConfigs/axiosConfig";
 
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";

@@ -11,7 +11,7 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import dayjs from "dayjs";
 
-import axios from "../../axiosConfigs/axiosBaseSettings";
+import axios from "../../axiosConfigs/axiosConfig";
 
 import "./Rent.scss"
 
@@ -89,10 +89,10 @@ export const Rent = () => {
             if (currentCarID !== 0) {
                 let car = curentCar.id;
                 // response = await axios.post("https://morent-backend-xavm.onrender.com/api/payment/", {... data, username, car});
-                response = await axios.post("http://127.0.0.1:8000/api/payment/", {... data, username, car});
+                response = await axios.post("/api/payment/", {... data, username, car});
             } else {
                 // response = await axios.post("https://morent-backend-xavm.onrender.com/api/payment/", {... data, username});
-                response = await axios.post("http://127.0.0.1:8000/api/payment/", {... data, username});
+                response = await axios.post("/api/payment/", {... data, username});
             } 
             
             if (response.status === 401) {

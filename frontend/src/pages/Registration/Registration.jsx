@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import axios from "../../axiosConfigs/axiosAuthSettings";
+import axios from "../../axiosConfigs/axiosConfig";
 
 import "./Registration.scss"
 

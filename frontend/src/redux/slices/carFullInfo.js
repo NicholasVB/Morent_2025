@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "../../axiosConfigs/axiosBaseSettings";
+import axios from "../../axiosConfigs/axiosConfig";
 
 export const fetchCarInfo = createAsyncThunk("carList/fetchCarInfo", async (id) => {
 	const { data } = await axios.get(`/api/car/${id}`);

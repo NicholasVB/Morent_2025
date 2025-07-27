@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { setUserInfo } from "../../redux/slices/personalFullInfo";
 import { useDispatch, useSelector } from "react-redux"
 import { setCurentAuthSession } from "../../redux/slices/auth";
-import axios from "../../axiosConfigs/axiosBaseSettings";
+import axios from "../../axiosConfigs/axiosConfig";
 
 import "./ProfileEdit.scss"
 
@@ -56,7 +56,7 @@ export const ProfileEdit = () => {
 
     const onSubmit = async (data) => {
         // await axios.patch("https://morent-backend-xavm.onrender.com/api/profile/", {...data})
-        await axios.patch("http://127.0.0.1:8000/api/profile/", {...data})
+        await axios.patch("/api/profile/", {...data})
         .then(function (response) {
             
             if (response.status === 401) {

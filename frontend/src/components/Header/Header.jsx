@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useNavigate} from "react-router-dom"
 import { setCurentAuthSession } from "../../redux/slices/auth";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
+import axios from "../../axiosConfigs/axiosConfig";
 
 import "./Header.scss";
 
@@ -46,7 +46,7 @@ export const Header = () => {
     async function logout() {
         let refresh = window.localStorage.getItem("refresh")
         // const response = await axios.post("https://morent-backend-xavm.onrender.com/api/logout/", {refresh});
-        const response = await axios.post("http://127.0.0.1:8000/api/logout/", {refresh});
+        const response = await axios.post("/api/logout/", {refresh});
         window.localStorage.removeItem("access");
         window.localStorage.removeItem("refresh");
         dispatch(setCurentAuthSession(false));

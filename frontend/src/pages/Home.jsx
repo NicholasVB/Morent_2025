@@ -6,7 +6,8 @@ import { setCurentAuthSession } from '../redux/slices/auth';
 import { setRenderList } from '../redux/slices/carList';
 import { AdsCard, CarItem, EmptyList, Pagination, Preloader } from '../components'; 
 import { Filter } from '../components/Filter/Filter';
-import axios from 'axios';
+// import axios from 'axios';
+import axios from "../axiosConfigs/axiosConfig"
 
 import "./Home.scss";
 
@@ -19,7 +20,7 @@ export const Home = () => {
     async function userIsAuth () {
         try {
             // const response = await axios.get("https://morent-backend-xavm.onrender.com/api/profile/", {
-            const response = await axios.get("http://127.0.0.1:8000/api/profile/", {
+            const response = await axios.get("/api/profile/", {
 				headers: { authorization: `Bearer ${window.localStorage.getItem("access")}` },
 			});
             if (response.status === 401) {
@@ -40,7 +41,7 @@ export const Home = () => {
                     try {
                         let refresh = window.localStorage.getItem("refresh");
                         // let responce = await axios.post("https://morent-backend-xavm.onrender.com/api/login/refresh", {refresh})
-                        let responce = await axios.post("http://127.0.0.1:8000/api/login/refresh", {refresh})
+                        let responce = await axios.post("/api/login/refresh", {refresh})
                         if (responce.status === 200) {
                             window.localStorage.setItem("access", responce.data.access);
                             
