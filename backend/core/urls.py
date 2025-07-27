@@ -30,4 +30,4 @@ urlpatterns = [
     path('api/city', CityListAPIView.as_view(), name='citys')
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
