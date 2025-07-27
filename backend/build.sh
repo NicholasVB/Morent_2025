@@ -24,6 +24,7 @@ cd ../backend
 pip install -r requirements-prod.txt
 
 # mkdir -p /media
+rm -rf staticfiles
 echo "➡️  collectstatic"
 
 python manage.py collectstatic --no-input
