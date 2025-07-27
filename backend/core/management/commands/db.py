@@ -6,6 +6,9 @@ from django.utils.text import slugify
 import os
 import shutil
 from random import choice, randint
+from cloudinary.uploader import upload
+from cloudinary.exceptions import Error as CloudinaryError
+
 # from django.db import connection
 # import psycopg2
 import django
@@ -77,12 +80,18 @@ class Command(BaseCommand):
                             photo_prefixs = ["inside_photo_one", "inside_photo_two", 'main_photo']
                             couples = list(zip(photo_prefixs, car_photos_full_path))
                             for photo_prefix, photo_full_path in couples:
-                                with open(os.path.join(self.WORKING_DIRECTORY, photo_full_path), 'rb') as f:
-                                    field = getattr(DB_car_instance, photo_prefix)
-                                    ext = os.path.splitext(photo_full_path)[1]
-                                    print("Сохраняем фото:", photo_prefix, "из", photo_full_path)
-                                    field.save(f"{photo_prefix}{ext}", File(f))
+                                full_path = os.path.join(self.WORKING_DIRECTORY, photo_full_path)
+                                try:
+                                    print("Загружаем в Cloudinary:", photo_prefix, "из", full_path)
+                                    result = upload(full_path, folder=f"cars/{DB_car_instance.slug}")
+                                    url = result['secure_url']
+
+                                    # Присваиваем URL как строку в ImageField
+                                    setattr(DB_car_instance, photo_prefix, url)
+                                except CloudinaryError as e:
+                                    print(f"Ошибка загрузки {photo_prefix}: {e}")
                             # connection.commit()
+                            DB_car_instance.save()
             except Exception as error:
                 print(error)
             # finally:

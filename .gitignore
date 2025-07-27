@@ -5,6 +5,7 @@ __pycache__/
 db.sqlite3
 .venv
 backend/media/
+backend/.env
 
 # Node / React
 node_modules/
