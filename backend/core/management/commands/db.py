@@ -9,6 +9,20 @@ from random import choice, randint
 # from django.db import connection
 # import psycopg2
 import django
+from PIL import Image
+from io import BytesIO
+from django.core.files.base import ContentFile
+
+def compress_image(file_path, ext):
+    img = Image.open(file_path)
+    img = img.convert("RGB")
+    # img.get_size()
+    buffer = BytesIO()
+    if os.path.getsize(file_path) >= 9.5 * 1024 * 1024:
+        img.save(buffer, format=ext, quality=70)
+    else:
+        img.save(buffer, format=ext, quality=100)
+    return ContentFile(buffer.getvalue())
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Morent.settings')
 django.setup()
@@ -71,18 +85,20 @@ class Command(BaseCommand):
                                 **specs
                             }
                             DB_car_instance = Car(**obj)
-                            DB_car_instance.save()
 
                             car_photos_full_path = [os.path.join(os.path.relpath(car_folder, self.WORKING_DIRECTORY), photo_name) for photo_name in os.listdir(car_folder)]
                             photo_prefixs = ["inside_photo_one", "inside_photo_two", 'main_photo']
                             couples = list(zip(photo_prefixs, car_photos_full_path))
                             for photo_prefix, photo_full_path in couples:
-                                with open(os.path.join(self.WORKING_DIRECTORY, photo_full_path), 'rb') as f:
+                                path_ = os.path.join(self.WORKING_DIRECTORY, photo_full_path)
+                                with open(path_, 'rb') as f:
                                     field = getattr(DB_car_instance, photo_prefix)
                                     ext = os.path.splitext(photo_full_path)[1]
-                                    print("Сохраняем фото:", photo_prefix, "из", photo_full_path)
-                                    field.save(f"{photo_prefix}{ext}", File(f))
+                                    print("Сохраняем фото:", photo_prefix, "из", path_)
+                                    compressed_image = compress_image(path_, ext)
+                                    field.save(f"{photo_prefix}{ext}", compressed_image, save=False)
                             # connection.commit()
+                            DB_car_instance.save()
             except Exception as error:
                 print(error)
             # finally:
