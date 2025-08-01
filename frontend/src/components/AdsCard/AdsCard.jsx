@@ -16,7 +16,7 @@ export const AdsCard = ({title, text, imgUrl}) => {
                     <Link to="/rent" onClick={() => {dispatch(setCurrentCarID(0))}} className="card__btn btn">Rental Car</Link>
                 </div>
                 <div className="card__img-body">
-                    <img src={imgUrl} alt=""/>
+                    <img src={"static" + imgUrl} alt=""/>
                 </div>
             </div>
 

@@ -58,7 +58,7 @@ export const CarItem = ({id, carName, carClass, imgUrl, specs, price}) => {
                     ? specs.map((characteristic, index) => 
                         <div className='specs__block'>
                             <div className="specs__img">
-                                <img src={icons[index]} alt=""/>
+                                <img src={"/static/" + icons[index]} alt=""/>
                             </div>
                             <p className='text'>{characteristic}</p>
                         </div>) 
@@ -93,7 +93,7 @@ export const CarItem = ({id, carName, carClass, imgUrl, specs, price}) => {
                     ? specs.map((characteristic, index) => 
                         <div className='specs__block'>
                             <div className="specs__img">
-                                <img src={icons[index]} alt=""/>
+                                <img src={"/static/" + icons[index]} alt=""/>
                             </div>
                             <p className='text'>{characteristic}</p>
                         </div>) 
@@ -130,7 +130,7 @@ export const CarItem = ({id, carName, carClass, imgUrl, specs, price}) => {
                         ? specs.map((characteristic, index) => 
                             <div className='specs__block'>
                                 <div className="specs__img">
-                                    <img src={icons[index]} alt=""/>
+                                    <img src={"/static/" + icons[index]} alt=""/>
                                 </div>
                                 <p className='text'>{characteristic}</p>
                             </div>) 

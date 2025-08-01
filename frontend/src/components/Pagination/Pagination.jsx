@@ -36,14 +36,14 @@ export const Pagination = ({reqLen, itemList, actionfn}) => {
         <div className='pagination'>
             <div className="pagination__body">
                 <div className="pagination__btn_left btn" onClick={() => paginate(currentPage - 1, max, setCurrentPage)}>
-                    <img src="/ArrowLeft.png" alt=""/>
+                    <img src="/static/ArrowLeft.png" alt=""/>
                 </div>
                 <div className="pagination__text-body">
                     <p>{currentPage} of {max}</p>
                 </div>
                     
                 <div className="pagination__btn_right btn" onClick={() => paginate(currentPage + 1, max, setCurrentPage)}>
-                    <img src="/ArrowRight.png" alt=""/>
+                    <img src="/static/ArrowRight.png" alt=""/>
                 </div>
             </div>
         </div>
