@@ -1,8 +1,13 @@
 import axios from "axios";
 
-const is_production = process.env.REACT_APP_IS_PRODUCTION
-const local_url = process.env.REACT_APP_LOCAL_URL
-const production_url = process.env.REACT_APP_PRODUCTION_URL
+const is_production = process.env.REACT_APP_IS_PRODUCTION === 'true';
+const local_url = process.env.REACT_APP_LOCAL_URL;
+const production_url = process.env.REACT_APP_PRODUCTION_URL;
+
+console.log("is_production:", is_production);
+console.log("local_url:", local_url);
+console.log("production_url:", production_url);
+console.log("baseURL:", is_production ? production_url : local_url);
 
 const instance = axios.create({
     baseURL: is_production ? production_url : local_url,
