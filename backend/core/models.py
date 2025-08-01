@@ -13,9 +13,11 @@ class Car(models.Model):
 
     car_name = models.CharField(max_length=50, verbose_name="Название машины")
     slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="URL")
+    
     main_photo = models.ImageField(upload_to=upload_to_category_folder, verbose_name="Фото cо стороны")
     inside_photo_one = models.ImageField(upload_to=upload_to_category_folder, verbose_name="Первое фото внутри")
     inside_photo_two = models.ImageField(upload_to=upload_to_category_folder, verbose_name="Второе фото внутри")
+
     is_published = models.BooleanField(default=True, verbose_name="Публикация")
     fuel_tank_capacity = models.IntegerField(verbose_name="Обьем топливного бака")
     number_of_rentals = models.IntegerField(verbose_name="Количество аренд")

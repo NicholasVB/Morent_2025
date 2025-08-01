@@ -6,6 +6,9 @@ from django.utils.text import slugify
 import os
 import shutil
 from random import choice, randint
+from cloudinary.uploader import upload
+from cloudinary.exceptions import Error as CloudinaryError
+
 # from django.db import connection
 # import psycopg2
 import django
