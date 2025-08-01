@@ -29,8 +29,8 @@ echo "➡️  collectstatic"
 
 python manage.py collectstatic --no-input
 # echo "➡️  migrate"
-python manage.py migrate
+# python manage.py migrate
 
 # echo "➡️  Наполняем БД"
 # custome command for filling db 
-python manage.py db --clear --fill
+# python manage.py db --clear --fill
