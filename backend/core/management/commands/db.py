@@ -9,23 +9,28 @@ from random import choice, randint
 from cloudinary.uploader import upload
 from cloudinary.exceptions import Error as CloudinaryError
 
-# from django.db import connection
-# import psycopg2
 import django
 from PIL import Image
 from io import BytesIO
 from django.core.files.base import ContentFile
 
-def compress_image(file_path, ext):
-    img = Image.open(file_path)
-    img = img.convert("RGB")
-    # img.get_size()
-    buffer = BytesIO()
-    if os.path.getsize(file_path) >= 9.5 * 1024 * 1024:
-        img.save(buffer, format=ext, quality=70)
-    else:
-        img.save(buffer, format=ext, quality=100)
-    return ContentFile(buffer.getvalue())
+def compress_image(file_path, ext: str):
+    try:
+        img = Image.open(file_path)
+        img = img.convert("RGB")
+        ext = ext.lstrip(".").upper()
+        if ext == "JPG": ext = "JPEG"
+        max_size = 9.5 * 1024 * 1024
+        quality = 100
+        while quality >= 20:
+            buffer = BytesIO()
+            img.save(buffer, format=ext, quality=quality)
+            curent_image_size = buffer.tell()
+            if curent_image_size < max_size:
+                return ContentFile(buffer.getvalue())   
+            quality -= 5
+    except Exception as error:
+        print("error with image: ", error)
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Morent.settings')
 django.setup()
@@ -59,9 +64,6 @@ class Command(BaseCommand):
                 "out-1": "main_photo",
             }
             try:
-                # connection = self.connection_to_db("mysite")
-                # cursor = connection.cursor()
-                
                 with open(os.path.join(self.WORKING_DIRECTORY, self.FILE), "r", encoding="utf-8") as file:
                     for line in file:
                         if not line.strip():
@@ -100,22 +102,14 @@ class Command(BaseCommand):
                                     print("Сохраняем фото:", photo_prefix, "из", path_)
                                     compressed_image = compress_image(path_, ext)
                                     field.save(f"{photo_prefix}{ext}", compressed_image, save=False)
-                            # connection.commit()
                             DB_car_instance.save()
             except Exception as error:
                 print(error)
-            # finally:
-                # cursor.close()
-                # connection.close()
-
+ 
     def add_arguments(self, parser):
         parser.add_argument("--clear", action="store_true")
         parser.add_argument("--fill", action="store_true")
         parser.add_argument("--rm_mediafold", action="store_true")
-    
-    # def connection_to_db(self, DB_name):
-    #     connection = psycopg2.connect(host="localhost", database=DB_name, user="postgres", password="mLk690")
-    #     return connection
     
     def has_more_than_one_type_of_fuel(self, characteristic):
         return True if "," in characteristic else False
