@@ -115,7 +115,7 @@ export const Filter = () => {
                     <div className="filter-component__buttons-open filter-buttons-open">
                         <div className="filter-buttons-open__text">Filters</div>
                         <div className='filter-component__x-icon' onClick={toggleFiltersBodyState}>
-                            <img src={"/static/" + "/x_icon.png"} alt=""/>
+                            <img src={"/static" + "/x_icon.png"} alt=""/>
                         </div>
                     </div>
                     

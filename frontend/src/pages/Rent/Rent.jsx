@@ -430,7 +430,7 @@ export const Rent = () => {
                             </div>
                         </form>
                         <div className="confirm-end-block">
-                            <img src={"/safe-image.svg"} className="img"></img>
+                            <img src={"static/safe-image.svg"} className="img"></img>
                             <div className="title-block__title ">All your data are safe</div>
                             <div className="title-block__sub-title">We are using the most advanced security to provide you the best experience ever.</div>
                         </div>

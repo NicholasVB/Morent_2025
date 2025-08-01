@@ -9,7 +9,7 @@ export const Socials = () => {
                 <div className="socials__body">
                     <div className="socials__personal-card personal-card">
                         <div className="personal-card__photo">
-                            <img src={"/Dima.jpg"} alt=""/>
+                            <img src={"static/Dima.jpg"} alt=""/>
                         </div>
                         <div className="personal-card__about-developer-body">                            
                             <div className="personal-card__name">Dmytro Hmelnitskiy</div>
@@ -41,7 +41,7 @@ export const Socials = () => {
 
                     <div className="socials__personal-card personal-card">
                         <div className="personal-card__photo">
-                            <img src={"/userIcon.png"} alt=""/>
+                            <img src={"static/userIcon.png"} alt=""/>
                         </div>
                         <div className="personal-card__about-developer-body">                            
                             <div className="personal-card__name">Mykola Bryksin</div>
